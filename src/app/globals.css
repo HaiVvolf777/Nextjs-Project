@@ -25,3 +25,7 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+:focus-visible {
+    outline: -webkit-focus-ring-color auto 0px !important;
+}
