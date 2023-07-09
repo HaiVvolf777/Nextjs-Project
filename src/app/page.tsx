@@ -7,6 +7,7 @@ export default function Home() {
 
   const login = () => {
     router.push("/login");
+    // console.log('clicked');
   };
 
   return (
