@@ -1,14 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import React , {useEffect} from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import { MdVisibility, MdVisibilityOff } from "react-icons/md";
 import { toast } from "react-hot-toast";
 
 const SignPage = () => {
-
   const router = useRouter();
   const [user, setUser] = React.useState({
     email: "",
@@ -22,56 +21,45 @@ const SignPage = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
 
-
-
-
-
-  const [ buttonDisbled, setButtonDisabled ] = React.useState(false);
+  const [buttonDisbled, setButtonDisabled] = React.useState(false);
 
   const [loading, setLoading] = React.useState(false);
 
-
   useEffect(() => {
-   
-    if(user.email.length > 0 && user.password.length > 0 && user.username.length > 0){
-      setButtonDisabled(false)
+    if (
+      user.email.length > 0 &&
+      user.password.length > 0 &&
+      user.username.length > 0
+    ) {
+      setButtonDisabled(false);
+    } else {
+      setButtonDisabled(true);
     }
-    else{
-      setButtonDisabled(true)
-    } 
-
-  }, [user])
-
+  }, [user]);
 
   const onSignup = async () => {
-
     try {
       setLoading(true);
-    const response =  axios.post('/api/users/signup', user);
-    toast.success('Signup successful')
+      const response = axios.post("/api/users/signup", user);
+      toast.success("Signup successful");
       console.log("Signup Sucessfull", response);
-      router.push('/login');
-      
-      
+      router.push("/login");
     } catch (error: any) {
+      console.log("Signup Failed: ", error.message);
 
-      console.log('Signup Failed: ', error.message);
-      
-      toast.error(error.message)
-
+      toast.error(error.message);
     } finally {
       setLoading(false);
     }
-
   };
-  
-
 
   return (
     <>
       <div className="container mx-auto">
         <div className="flex flex-col items-center justify-center min-h-screen py-2">
-          <h1 className="text-center text-2xl">{loading ? 'Loading...' : 'SignUp'}</h1>
+          <h1 className="text-center text-2xl">
+            {loading ? "Loading..." : "SignUp"}
+          </h1>
           <hr />
           <div className="flex flex-col my-2">
             <label htmlFor="username">UserName</label>
