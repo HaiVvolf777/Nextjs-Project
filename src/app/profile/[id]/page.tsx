@@ -48,14 +48,14 @@ const UserProfilePage = ({ params }: any) => {
         <div className="flex gap-4 mt-5">
           <button
             onClick={logout}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
+            className="bg-yellow-700 hover:bg-yellow-800 text-white font-bold py-2 px-4 rounded-lg"
           >
             Logout
           </button>
 
           <button
             onClick={getUserDetails}
-            className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
+            className="bg-yellow-700  hover:bg-yellow-800 text-white font-bold py-2 px-4 rounded-lg"
           >
             GetUser Details
           </button>
@@ -66,3 +66,4 @@ const UserProfilePage = ({ params }: any) => {
 };
 
 export default UserProfilePage;
+ 
