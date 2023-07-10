@@ -32,11 +32,11 @@ const UserProfilePage = ({ params }: any) => {
       <div className="flex flex-col items-center justify-around min-h-screen py-2">
         <div className="text-2xl font-bold">
           Profile Page{" "}
-          <span className="bg-yellow-600 text-black px-3 py-2 rounded-lg">
+          <span className="bg-orange-500 text-black px-3 py-2 rounded-lg">
             {params.id}
           </span>
         </div>
-        <h2 className="p-1 rounded bg-yellow-600">
+        <h2 className="p-1 rounded bg-orange-500">
           {data === "nothing" ? (
             "User Name"
           ) : (
@@ -48,14 +48,14 @@ const UserProfilePage = ({ params }: any) => {
         <div className="flex gap-4 mt-5">
           <button
             onClick={logout}
-            className="bg-yellow-700 hover:bg-yellow-800 text-white font-bold py-2 px-4 rounded-lg"
+            className="bg-orange-500 hover:bg-orange-800 text-white font-bold py-2 px-4 rounded-lg"
           >
             Logout
           </button>
 
           <button
             onClick={getUserDetails}
-            className="bg-yellow-700  hover:bg-yellow-800 text-white font-bold py-2 px-4 rounded-lg"
+            className="bg-orange-500  hover:bg-orange-800 text-white font-bold py-2 px-4 rounded-lg"
           >
             GetUser Details
           </button>
